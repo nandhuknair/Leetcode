@@ -3,14 +3,14 @@
  * @return {boolean}
  */
 var halvesAreAlike = function(s) {
-    let vowel =new Set( ['a','e','i','o','u','A','E','I','O','U'])
+    let vowel = ['a','e','i','o','u','A','E','I','O','U']
      let countA = 0
      let countB = 0
      let mid = Math.floor(s.length/2)
     
     
     for (let i = 0 ; i < s.length ; i++){
-        if(vowel.has(s[i])){
+        if(vowel.includes(s[i])){
             if(i<mid){
                 countA++
             }else{
