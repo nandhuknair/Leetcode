@@ -3,18 +3,8 @@
  * @return {number[]}
  */
 var plusOne = function(digits) {
-       let n = digits.length;
-    for(let i = n-1; i >= 0; i--){
-        if(digits[i] < 9){
-            digits[i]++;
-            return digits;
-        } else {
-            digits[i] = 0;
-        } 
-    }
-    console.log("before unshift", digits);
-    digits.unshift(1);
-    console.log("after unshift", digits);
-    return digits;
-
+ let variable = BigInt(digits.join(''))
+ variable++
+ console.log(variable)
+ return variable.toString().split('')
 };
