@@ -3,11 +3,10 @@
  * @return {boolean}
  */
 var checkPerfectNumber = function(num) {
-    let output = 0 
-    for(let i = 1 ; i <= num/2 ; i++){
-        if(num % i === 0){
-            output += i
-        }
+    if(num==1) return false
+    let sum=1
+    for(let i=2;i<=num/2;i++){
+        if(num%i==0) sum+=i
     }
-    return output === num ? true : false
+    return sum==num
 };
