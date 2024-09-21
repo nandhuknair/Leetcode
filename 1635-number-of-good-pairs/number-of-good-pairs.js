@@ -3,17 +3,16 @@
  * @return {number}
  */
 var numIdenticalPairs = function(nums) {
- 
-    let count =  0;
-    const map = new Map()
-    for( const num of nums){
-        if(map.has(num)){
-            count += map.get(num)
-            map.set(num,map.get(num)+1)
-        }
-        else {
-            map.set(num,1)
+    const countMap = {}
+    let goodPairs = 0 
+    nums.forEach(num=> {
+        countMap[num] = (countMap[num] || 0 ) + 1
+    })
+    for(let count of Object.values(countMap)){
+        if(count > 1){
+            goodPairs += (count * (count - 1)) / 2 ;
         }
     }
-    return count 
+
+    return goodPairs
 };
